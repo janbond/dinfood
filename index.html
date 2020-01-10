@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Thermaltake">
+<meta name="description" content="Thermaltake">
+<meta name="robots" content="noindex"> <!--防止搜尋引擎記錄-->
+<title>一起訂便當</title>
+<link href="favicon.ico" rel="icon">
+<link href="favicon.ico" rel="shortcut icon">
+<link href="apple-touch-icon.png" rel="apple-touch-icon">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/header.css" rel="stylesheet">
+<link href="js/plugins/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<script src="js/plugins/jQuery/jquery-1.8.3.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+jQuery(document).ready(function(e) {
+	
+	$('#iForm').hide();
+	$('.iNote').hide();
+	setTimeout(function() {
+		$('#iForm').fadeIn(1500);
+	}, 200);
+  
+  
+	$('.btnJoin').click(function() { 
+	
+		$('#iForm').fadeOut(700);
+		$('.iBgBox').removeClass('blurIn');
+		$('.iBgBox').addClass('blurOut');
+		//e.stopPropagation();
+		
+	});
+	
+	$('.popUp').hide();
+	$('.btnJoin a').click(function() { 
+	
+		$('.popUp').fadeIn(700);
+		$('.iNote').fadeIn(700);
+		$('.iBgBox').animate({left:'50%'});
+		//e.stopPropagation();
+		
+	});
+	$('.popCloBtn').click(function() {
+	
+		$('.popUp').fadeOut(700);
+		$('#iForm').fadeIn(700);
+		$('.iBgBox').addClass('blurIn');
+		$('.iBgBox').removeClass('blurOut');
+		
+		$('.iNote').fadeOut(700);
+		$('.iBgBox').animate({left:'0'});
+		
+		//e.stopPropagation();
+		
+	});
+
+});
+</script>
+
+</head>
+<body>
+	<div id="iWrap">
+  	<div class="row popUp">
+      <div class="box small-6 large-centered">
+        
+        <div class="memberJoinBox">
+          <a href="#" class="popCloBtn">&#10006;</a>
+          <form action="">
+            <h4>帳號設定</h4>
+            <table class="memberPerBoxTab">
+              <tr>
+                <th>帳號</th>
+                <td><input type="text" name="account" placeholder="" class="inBox w100p" required></td>
+              </tr>
+              <tr>
+                <th>密碼</th>
+                <td><input type="password" name="pwd" class="inBox w100p" required></td>
+              </tr>
+              <tr>
+                <th>密碼確認</th>
+                <td><input type="password" name="pwd" class="inBox w100p" required></td>
+              </tr>
+              
+              
+            </table>
+            <h4>基本資料</h4>
+            <table class="memberPerBoxTab">
+              <tr>
+                <th>姓名</th>
+                <td><input type="text" name="account" placeholder="" class="inBox w100p" required></td>
+              </tr>
+              <tr>
+                <th>電話</th>
+                <td><input type="text" name="account" placeholder="" class="inBox w100p" required></td>
+              </tr>
+              <tr>
+                <th>部門</th>
+                <td>
+                  <select name="country" id="country" class="inBox" required>
+                    <option selected="selected" value="">部門</option>
+                    <option value="數位內容設計中心">數位內容設計中心</option>
+                    
+                  </select>
+                </td>
+              </tr>
+              
+              
+              
+            </table>
+            <div class="memberBtn">
+              
+              <div class="btnSubmit"><input type="submit" name="sendButton" id="sendButton" value="確認送出" onclick="check()"/><!--<a href="">送出</a>--><!--<input type="button" name="sendButton" id="sendButton" value="登入團員" onclick="check()"/>--></div>
+              <div class="clearer"></div>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+      <div class="iNote">申請後需要經過管理員審核，通過就可以立即使用囉！</div>
+    </div>
+    
+  	<div id="iForm">
+      <header>
+        <h1 title="一起訂便當"><img src="images/logo.png" alt="一起訂便當"></h1>
+        <h2><img src="images/logo_sub.png" alt="一起訂便當"></h2>
+        <div class="txt">歡迎來到一起訂便當，如要入團，請先申請團員。</div>
+      </header>
+      
+      <div class="memberPerWrap">
+        
+        <div class="memberPerBox">
+          <form action="order_list.html">
+            <table class="memberPerBoxTab">
+              <tr>
+                <th>帳號</th>
+                <td><input type="text" name="account" placeholder="" class="inBox w100p" required></td>
+              </tr>
+              <tr>
+                <th>密碼</th>
+                <td><input type="password" name="pwd" class="inBox w100p" required></td>
+              </tr>
+              
+            </table>
+            <div class="memberBtn">
+              <div class="btnJoin"><a href="javascript:void(0)">申請團員</a></div>
+              <div class="btnSubmit"><input type="submit" name="sendButton" id="sendButton" value="確認送出" onclick="check()"/><!--<a href="order_list.html">登入團員</a>--><!--<input type="button" name="sendButton" id="sendButton" value="登入團員" onclick="check()"/>--></div>
+              <div class="clearer"></div>
+            </div>
+          </form>
+        </div>
+        
+        
+      </div>
+      
+    </div>
+    <div class="iBgBox blurIn">
+      <div class="iBg1"><img src="images/i_bg_1.png" alt="一起訂便當"></div>
+      <div class="iBg2"><img src="images/i_bg_2.png" alt="一起訂便當"></div>
+      <div class="iBg3"><img src="images/i_bg_3.png" alt="一起訂便當"></div>
+    </div>
+    
+  </div>
+  
+  
+</body>
+</html>

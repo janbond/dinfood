@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Thermaltake">
+<meta name="description" content="Thermaltake">
+<meta name="robots" content="noindex"> <!--防止搜尋引擎記錄-->
+<title>一起訂便當</title>
+<link href="favicon.ico" rel="icon">
+<link href="favicon.ico" rel="shortcut icon">
+<link href="apple-touch-icon.png" rel="apple-touch-icon">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/header.css" rel="stylesheet">
+<link href="js/plugins/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<script src="js/plugins/jQuery/jquery-1.8.3.min.js"></script>
+<script src="js/countdown/jquery.countdown.min.js"></script>
+
+<script src="js/common.js"></script>
+<script>
+jQuery(document).ready(function(e) {
+
+});
+</script>
+
+</head>
+<body>
+	<div class="iBg4"><img src="images/i_bg_4.png" alt="一起訂便當"></div>
+  <div class="iBg5"><img src="images/i_bg_3.png" alt="一起訂便當"></div>
+	<div id="iWrap" class="orderListWrap">
+  	<header>
+    	<!--<div class="topNav">
+      	<ul>
+        	<li><a href="member_modify.html"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;會員修改</a></li>
+          <li><a href="member_password.html"><i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;&nbsp;密碼修改</a></li>
+        </ul>
+      </div>-->
+      
+      <div class="topNav">
+        <a href="#cd-navigation" class="nav-trigger">
+          <span>
+            <em aria-hidden="true"></em>
+          </span>
+        </a>
+        <div class="topNavLeft">
+          <ul>
+          
+            <li><i class="fa fa-child" aria-hidden="true"></i>&nbsp;您好</li>
+            <li class="openGroupBtn"><a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;開團</a></li>
+            <li class="openGroupBtn pink"><a href=""><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;便當管理</a></li>
+              
+            <li class="openGroupBtn pink"><a href="<?php echo base_url('admin/drink_result'); ?>"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;飲料管理</a></li>
+              
+          </ul>
+        </div>
+        <div class="cd-primary-nav">
+          <ul id="cd-navigation">
+            <li><a href="<?php echo base_url('member/openList'); ?>"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;訂便當</a></li>
+            
+            <li><a href="<?php echo base_url('member/memberEdit'); ?>"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;會員修改</a></li>
+            <li><a href="<?php echo base_url('member/memberpassword'); ?>"><i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;密碼修改</a></li>
+            
+          <?php if(! empty($toDayOpenList)){ ?>
+          <?php //如果有開團 ?>
+            <li><a href="<?php echo base_url('member/finish'); ?>"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;你的訂單</a></li>				
+          <?php }?>
+            
+            
+          <!-- <?php if($memberInfo['role_id'] == 1){?>
+            <li><a href="<?php echo base_url('member/drinkList'); ?>"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;&nbsp;飲料</a></li>
+          <?php }?> -->
+            
+          <li><a href="<?php echo base_url('welcome/signOut'); ?>"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;登出</a></li>
+            
+          </ul>
+        </div>
+      </div>
+  
+      <h1 title="一起訂便當"><img src="images/logo.png" alt="一起訂便當"></h1>
+      <h2><img src="images/logo_sub.png" alt="一起訂便當"></h2>
+      <div class="todayShopWrap">
+      	<div class="signBox"><p>便當便當便當店名</p></div>
+      </div>
+    </header>
+    
+    <div class="orderWrap">
+    	<div class="gBanner"><img src="images/banner_2.jpg" alt=""></div>
+    	<div class="memberPerWrap">
+        <!--<div class="memberPerBox orderList countBox">
+					<div class="fireWord">Count Down</div>
+					<div class="h50"></div>
+					<div id='topsalse'>
+						
+						<?php  
+							if($this->lunch_config['is_open'] == 1 || $memberInfo['role_id'] == 1){
+								$this->load->view('draft_countdown');
+							}
+						?>
+					</div>
+				</div>-->
+        <div class="memberPerBox orderList hotListBox">
+
+						<?php if(!empty($foodRank)){?>
+						<div class="fireWord">Hot Products</div>
+							<div class="h50"></div>
+								<ul>	
+																	<li><div class="medalPic"><img src="images/medals_1.png" alt="1"></div><div class="medalName">現炸雞腿飯</div></li>
+                                  <li><div class="medalPic"><img src="images/medals_2.png" alt="1"></div><div class="medalName">現炸雞腿飯</div></li>
+                                  <li><div class="medalPic"><img src="images/medals_3.png" alt="1"></div><div class="medalName">現炸雞腿飯</div></li>
+                                  <li><div class="medalPic"><img src="images/medals_4.png" alt="1"></div><div class="medalName">現炸雞腿飯</div></li>
+                                  <li><div class="medalPic"><img src="images/medals_5.png" alt="1"></div><div class="medalName">現炸雞腿飯</div></li>
+
+								
+														
+								</ul>
+
+						<?php }?>
+				</div>
+        <div class="memberPerBox orderList">
+          <ul>
+          	<li class="product">
+            	
+            	<div class="name">
+              	<label>排骨飯</label>
+              </div>
+              <div class="price">一個<span class="product-price">70</span></div>
+              <div class="quan product-quantity">
+                <input type="number" value="0" min="0" class="inBoxO w80p">
+              </div>
+              <!--<div class="orderCheck"><button class="tiny">Add</button></div>-->
+              <div class="orderCheck">共<span class="product-line-price">0</span></div>
+              <div class="clearer"></div>
+            </li>
+            <li class="product">
+            	
+            	<div class="name">
+              	<label>魯肉飯便當</label>
+              </div>
+              <div class="price">一個<span class="product-price">85</span></div>
+              <div class="quan product-quantity">
+                <input type="number" value="0" min="0" class="inBoxO w80p">
+              </div>
+              <!--<div class="orderCheck"><button class="tiny">Add</button></div>-->
+              <div class="orderCheck">共<span class="product-line-price">0</span></div>
+              <div class="clearer"></div>
+            </li>
+            <li class="product">
+            	
+            	<div class="name">
+              	<label>綜合羹麵</label>
+              </div>
+              <div class="price">一個<span class="product-price">50</span></div>
+              <div class="quan product-quantity">
+                <input type="number" value="0" min="0" class="inBoxO w80p">
+              </div>
+              <!--<div class="orderCheck"><button class="tiny">Add</button></div>-->
+              <div class="orderCheck">共<span class="product-line-price">0</span></div>
+              <div class="clearer"></div>
+            </li>
+            
+            
+          </ul>
+        </div>
+        
+        <div class="memberPerBox orderList">
+          
+          <table class="memberPerBoxTab">
+            <tr>
+              <th>備註</th>
+              <td><textarea name="" class="inBox area w100p"></textarea></td>
+            </tr>
+            <tr>
+              <th>訂購日期</th>
+              <td>4/12 中午 12點前送達</td>
+            </tr>
+            
+            <tr>
+              <th>收款人</th>
+              <td>王小明<span class="payeeInfo">分機：2312&nbsp;&nbsp;位置：ID部門3D列表機前</span></td>
+            </tr>
+            <tr>
+              <th>總金額</th>
+              <td id="cart-total" class="total totals-value">$ 0</td>
+            </tr>
+            
+          </table>
+          
+          <div class="memberBtn">
+            
+            <div class="btnSubmit"><a href="order_finish.html">菜單送出</a><!--<input type="button" name="sendButton" id="sendButton" value="登入團員" onclick="check()"/>--></div>
+            <div class="clearer"></div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    
+  </div>
+  
+  <script src="js/plugins/count.js"></script>
+</body>
+</html>
